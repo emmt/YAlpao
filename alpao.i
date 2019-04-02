@@ -16,11 +16,11 @@ if (is_func(plug_in)) plug_in, "yalpao";
 extern alpao_open;
 /* DOCUMENT dm = alpao_open(config);
 
-     Open device to Alpao deformable mirror.  CONFIG is the path to the
-     device configuration file (with an optional ".acfg" extension).
-     The device is automatically closed when DM is no longer referenced.
+     Open a device to an Alpao deformable mirror.  CONFIG is the path to the
+     device configuration file (with an optional ".acfg" extension).  The
+     device is automatically closed when DM is no longer referenced.
 
-     Object DM can be used as follows to retrieve parameters.
+     Object DM can be used to retrieve parameters as follows:
 
          val = dm.key;
          val = dm("key");
@@ -33,7 +33,7 @@ extern alpao_open;
          dm.nbofactuator
          dm("nbofactuator")
 
-     all yields the number of actuators.
+     all yield the number of actuators.
 
      Object DM can be used as a function/subroutine to send a command to the
      deformable mirror:
@@ -41,8 +41,8 @@ extern alpao_open;
          dm, x;      // send command x
          xp = dm(x); // send command x and return actual command
 
-     where X is a vector of DM.num values and XP is X clipped to the limits
-     accepted by the deformable mirror.
+     where X is a vector of DM.NbOfActuator values and XP is X clipped to the
+     limits imposed by the deformable mirror.
 
      To retrieve the last commands sent to the deformable mirror:
 
