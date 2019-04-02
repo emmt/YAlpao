@@ -5,9 +5,9 @@
 
 ## Usage
 
-If the plug-in has been properly installed, it is sufficient to use any of its
-functions to automatically load the plug-in.  You may force the loading of the
-plug-in by something like:
+If the plug-in has been properly installed (see [Installation](#installation)
+below), it is sufficient to use any of its functions to automatically load the
+plug-in.  You may force the loading of the plug-in by something like:
 
 ```cpp
 #include "alpao.i"
