@@ -39,7 +39,7 @@ EXTRA_PKGS=$(Y_EXE_PKGS)
 PKG_CLEAN=
 
 # autoload file for this package, if any
-PKG_I_START=
+PKG_I_START=${srcdir}/alpao-start.i
 # non-pkg.i include files for this package, if any
 PKG_I_EXTRA=
 
