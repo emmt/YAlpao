@@ -9,13 +9,13 @@ If the plug-in has been properly installed, it is sufficient to use any of its
 functions to automatically load the plug-in.  You may force the loading of the
 plug-in by something like:
 
-```{.cpp}
+```cpp
 #include "alpao.i"
 ```
 
 or
 
-```{.cpp}
+```cpp
 require, "alpao.i";
 ```
 
@@ -23,7 +23,7 @@ in your code.
 
 To open an Alpao deformable mirror in Yorick, call:
 
-```{.cpp}
+```cpp
 dm = alpao_open(config);
 ```
 
@@ -34,7 +34,7 @@ referenced.
 
 The object `dm` can be used to retrieve parameters as follows:
 
-```{.cpp}
+```cpp
 val = dm.key;
 val = dm("key");
 ```
@@ -43,7 +43,7 @@ where `key` is the symbolic name of the parameter while `"key"` is the name of
 the parameter as a string.  The case of the characters does not matter.  For
 instance, any of:
 
-```{.cpp}
+```cpp
 dm.NbOfActuator
 dm("NbOfActuator")
 dm.nbofactuator
@@ -55,7 +55,7 @@ yields the number of actuators of `dm`.
 The deformable mirror object `dm` can also be used as a function or a
 subroutine to send a command to the deformable mirror:
 
-```{.cpp}
+```cpp
 dm, x;      // send command x
 xp = dm(x); // send command x and return actual command
 ```
@@ -65,25 +65,25 @@ where `x` is a vector of `dm.NbOfActuator` floating-point values and `xp` is
 
 The last commands sent to the deformable mirror are retrieved by:
 
-```{.cpp}
+```cpp
 xp = dm();
 ```
 
 To reset the shape of the deformable mirror, call:
 
-```{.cpp}
+```cpp
 alpao_reset, dm;
 ```
 
 To stop controlling the deformable mirror, call:
 
-```{.cpp}
+```cpp
 alpao_stop, dm;
 ```
 
 Finally, you may call:
 
-```{.cpp}
+```cpp
 val = alpao_get(dm, key);
 alpao_set, dm, key, val;
 ```
@@ -97,7 +97,7 @@ deformable mirror `dm`.  Here, `key` is a string with the name of the parameter
 
 In short, building and installing the plug-in can be as quick as:
 
-```{.sh}
+```sh
 cd $BUILD_DIR
 $SRC_DIR/configure --cflags="-I$PREFIX/include" --deplibs="-L$PREFIX/lib64 -lasdk"
 make
@@ -120,36 +120,36 @@ More detailled installation explanations are given below.
 
    For an **in-place build**, go to the source directory of the plug-in code
    and run the configuration script:
-   ```{.sh}
+   ```sh
    cd SRC_DIR
    ./configure
    ```
    To see the configuration options, type:
-   ```{.sh}
+   ```sh
    ./configure --help
    ```
 
    To compile in a **different build directory**, say `$BUILD_DIR`, create the
    build directory, go to the build directory, and run the configuration
    script:
-   ```{.sh}
+   ```sh
    mkdir -p $BUILD_DIR
    cd $BUILD_DIR
    $SRC_DIR/configure
    ```
    where `$SRC_DIR` is the path to the source directory of the plug-in code.
    To see the configuration options, type:
-   ```{.sh}
+   ```sh
    $SRC_DIR/configure --help
    ```
 
 4. Compile the code:
-   ```{.sh}
+   ```sh
    make clean
    make
    ```
 
 5. Install the plug-in in Yorick directories:
-   ```{.sh}
+   ```sh
    make install
    ```
