@@ -13,7 +13,7 @@
 # The following default values are specific to the package.  They can be
 # overwritten by options on the command line.
 cfg_cflags=-I/apps/libexec/alpao/include
-cfg_deplibs=-L/apps/libexec/alpao/lib64 -lasdk
+cfg_deplibs="-L/apps/libexec/alpao/lib64 -lasdk"
 cfg_ldflags=
 
 # The other values are pretty general.
