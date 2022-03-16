@@ -1,6 +1,6 @@
 # YAlpao
 
-[Yorick](http://yorick.github.com/) interface to Alpao deformable mirrors.
+[Yorick](http://github.com/LLNL/yorick/) interface to Alpao deformable mirrors.
 
 
 ## Usage
